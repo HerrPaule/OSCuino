@@ -15,7 +15,7 @@ weitere Infos zu OSCuino findet man bei CNMAT: http://cnmat.berkeley.edu/oscuino
 für die Kommunikation werden folgende Erweiterungen benötigt:
 
 Arduino:
--OSCuino Library: https://github.com/CNMAT/OSC
+- OSCuino Library: https://github.com/CNMAT/OSC
 
 Max/MSP
 - odot Objekte: http://cnmat.berkeley.edu/downloads
