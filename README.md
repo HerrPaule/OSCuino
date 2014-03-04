@@ -28,3 +28,4 @@ Raspberry Pi & OSCuino
 
 OSCuino & Pure Data funktionieren auch mit dem Raspberry Pi. Die "print" Funktion in den Pure Data Beispielen sollte mit einem "gate" Objekt verbunden werden und hauptsächlich für das debuggin genutzt werden. Die Datenausgabe des "comport" und die dadurch kontinuierliche Ausgabe an die Konsole von Pure Data kann den Prozessor des Raspberry Pi stark belasten, wodurch es zu  Latenzen kommen kann.
 
+Funktionen wurden mit Raspberry Pi Model B, PD extended & Arduino Uno getestet.
