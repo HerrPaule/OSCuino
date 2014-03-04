@@ -1,0 +1,79 @@
+#N canvas 0 22 1440 802 10;
+#X declare -lib mrpeach;
+#X obj 53 239 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 300 599 import mrpeach;
+#X obj 128 600 mrpeach/slipdec 65536;
+#X obj 128 267 mrpeach/slipenc 65536;
+#X obj 220 377 loadbang;
+#X obj 220 334 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 146 427 baud 9600;
+#X msg 53 270 devices;
+#X msg 15 270 ports;
+#X obj 128 541 comport 3 9600;
+#X msg 17 411 open 3;
+#X msg 17 392 close 3;
+#X obj 128 659 print;
+#X obj 209 571 print;
+#X obj 128 625 unpackOSC;
+#X obj 15 239 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 220 427 open 3 \, pollintervall 1;
+#X msg 174 173 [;
+#X msg 128 174 ];
+#X obj 128 150 t b a b;
+#X obj 128 240 packOSC;
+#X obj 129 90 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 129 116 /led/1 \$1;
+#X obj 198 90 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 198 116 /led/2 \$1;
+#X text 525 148 wenn Arduino Sketch OSC Bundles empfangen soll \, müssen
+die zusenden Bundles mit "[ ]" gekennzeichnet sein \, mehr siehe Hilfe
+von "packOSC";
+#X msg 299 101 /9 \$1;
+#X obj 299 -68 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X floatatom 327 78 5 0 0 0 - - -;
+#X text 469 77 ---- | |--- | ----;
+#X text 469 134 ---- | |--- | ----;
+#X text 524 105 OSC Nachrichten "/led/1 \, /led/2 \, /9" + Werte;
+#X text 471 213 ---- | |--- | ----;
+#X text 527 222 convertieren der vorherigen Nachrichten in OSC/SLIP
+kompatible bytes. Man kann auch "packOSCstream" nutzen. Dieses Paket
+beinhaltet "packOSC" und "mrpeach/slipenc 65536";
+#X text 466 611 ---- | |--- | ----;
+#X text 466 370 ---- | | | | | | | | |---Inhalt von "o.io.slipserial"
+| | | | | | | | ----;
+#X text 534 638 Ausgabe der OSC Nachrichten;
+#X connect 0 0 7 0;
+#X connect 2 0 14 0;
+#X connect 3 0 9 0;
+#X connect 4 0 16 0;
+#X connect 4 0 6 0;
+#X connect 5 0 4 0;
+#X connect 6 0 9 0;
+#X connect 7 0 9 0;
+#X connect 8 0 9 0;
+#X connect 9 0 2 0;
+#X connect 9 1 13 0;
+#X connect 10 0 9 0;
+#X connect 11 0 9 0;
+#X connect 14 0 12 0;
+#X connect 15 0 8 0;
+#X connect 16 0 9 0;
+#X connect 17 0 20 0;
+#X connect 18 0 20 0;
+#X connect 19 0 18 0;
+#X connect 19 1 20 0;
+#X connect 19 2 17 0;
+#X connect 20 0 3 0;
+#X connect 21 0 22 0;
+#X connect 22 0 19 0;
+#X connect 23 0 24 0;
+#X connect 24 0 19 0;
+#X connect 26 0 19 0;
+#X connect 27 0 28 0;
+#X connect 27 0 26 0;
