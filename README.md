@@ -1,7 +1,7 @@
-OSCuino
+OSCuino Examples
 =======
 
-Examples for using OSCuino with Pure Data &amp; Max/MSP
+Examples for using OSCuino with Pure Data, Max/MSP & TouchOSC
 
 
 
